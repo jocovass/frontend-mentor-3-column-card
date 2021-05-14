@@ -1,0 +1,107 @@
+$clr-orange: hsl(31, 77%, 52%);
+$clr-cyan: hsl(184, 100%, 22%);
+$clr-cyan-dark: hsl(179, 100%, 13%);
+$clr-white: hsla(0, 0%, 100%, 0.75);
+$clr-grey: hsl(0, 0%, 95%);
+
+$ff-heading: "Big Shoulders Display";
+$ff-text: "Lexend Deca";
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 93.75%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: $ff-text;
+  background-color: $clr-grey;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.cards {
+  width: 90%;
+  max-width: 375px;
+  margin: 3rem auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card {
+  padding: 4rem 3.2rem;
+  &--orange {
+    background-color: $clr-orange;
+
+    .card__btn {
+      color: $clr-orange;
+    }
+  }
+  &--cyan {
+    background-color: $clr-cyan;
+    .card__btn {
+      color: $clr-cyan;
+    }
+  }
+  &--cyan-dark {
+    background-color: $clr-cyan-dark;
+    .card__btn {
+      color: $clr-cyan-dark;
+    }
+  }
+  &__title {
+    font-family: $ff-heading;
+    font-size: 2.3rem;
+    color: $clr-white;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 2rem 0;
+  }
+  &__text {
+    color: $clr-white;
+    font-size: 0.91rem;
+    line-height: 1.7;
+  }
+
+  &__btn {
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 1em 1.9em;
+    display: inline-block;
+    background-color: $clr-white;
+    border-radius: 100px;
+    font-family: $ff-text;
+    margin-top: 2.4rem;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .cards {
+    display: flex;
+    max-width: 1250px;
+  }
+
+  .card {
+    display: flex;
+    flex-flow: column;
+    &__footer {
+      margin-top: auto;
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  html {
+    font-size: 103.12%;
+  }
+}
